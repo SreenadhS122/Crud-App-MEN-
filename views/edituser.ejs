@@ -1,0 +1,31 @@
+<%- include('layouts/header.ejs') %>
+<body style="background-image: url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp);">
+  <div class="padding-top mt-4 col-lg-6" style="margin-top: 300px; align-items: center; width: 600px; height: 400px;display: flex;flex-direction: column;justify-content: center;">
+    <% if (message) { %>
+      <div class="alert alert-danger" role="alert">
+      <%= message  %>
+      </div>
+      <% } %>
+        <h1 style="align-content: center;" class="margin-left"><strong>Edit User</strong></h1>
+    <form action="/edituser/<%= edituser._id  %>" method="post" style="width: 350px;height: 500px;">
+    <div class="mb-3 mt-3">
+      <label for="fullname" class="form-label">Fullname:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter fullname" name="fullname" value="<%= edituser.fullname %>" maxlength="30"/>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="text" class="form-control" id="pwd" placeholder="Enter email" name="email" value="<%= edituser.email %>" maxlength="30"/>
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Address:</label>
+        <input type="text" class="form-control" id="pwd" placeholder="Enter Address" name="address" value="<%= edituser.address %>" maxlength="100"/>
+      </div>
+      <div>       
+        <button type="submit" class="btn btn-primary align-items-center" style="align-content: center;width: 200px;margin-left: 75px;">Submit</button>
+      </div>
+    </form>
+    
+</div>
+</body>
+
+<%- include('layouts/footer.ejs') %>
